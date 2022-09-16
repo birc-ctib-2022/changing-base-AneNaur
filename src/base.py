@@ -13,7 +13,7 @@ digits[14] = 'E'
 digits[15] = 'F'
 
 
-def change_to_base(n,b): #(n: int, b: int) -> str:
+def change_to_base(n: int, b: int) -> str:
     """
     Return `n` in base `b`.
 
@@ -36,12 +36,11 @@ def change_to_base(n,b): #(n: int, b: int) -> str:
 
     assert 2 <= b <= 16
     liste=[]
-    x=n
-    while x >= b:
-        liste.append(digits[x%b])
-        x=x//b
+    while n >= b:
+        liste.append(digits[n%b])
+        n=n//b
     else:
-        liste.append(digits[x%b])
+        liste.append(digits[n%b])
     return "".join(liste[::-1])  # FIXME: return n in the right base
 
 #print(change_to_base(1,2))
